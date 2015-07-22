@@ -1,8 +1,328 @@
 <DOCTYPE html>
 <html lang="es">
 	<head>
+		<title>Curriculum</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			@charset "UTF-8";
+			/* Fonts */
+			@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
+			@import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+			/* Colors */
+			/* Sizes */
+			/* Media Query Breakpoint */
+			/* Header Arrow Effect */
+			/* Typography */
+			h1, h2, h3 {
+			  font-family: Bitter, serif;
+			}
+
+			h1 {
+			  color: #333;
+			  font-size: 190%;
+			}
+
+			h2 {
+			  color: #707070;
+			}
+
+			ul {
+			  list-style: none;
+			  margin-left: -1.1em;
+			}
+
+			li {
+			  margin-bottom: 10px;
+			  position: relative;
+			}
+			li:before {
+			  content: '✓';
+			  position: absolute;
+			  left: -20px;
+			}
+
+			a {
+			  color: #db4747;
+			  -moz-transition: all 0.2s ease;
+			  -o-transition: all 0.2s ease;
+			  -webkit-transition: all 0.2s ease;
+			  transition: all 0.2s ease;
+			}
+			a:hover, a:focus {
+			  color: #c82727;
+			}
+
+			.clearfix, header, .info {
+			  display: table;
+			  content: '';
+			  clear: both;
+			}
+
+			/* Box Model */
+			*, *:after, *:before {
+			  -moz-box-sizing: border-box;
+			  -webkit-box-sizing: border-box;
+			  box-sizing: border-box;
+			}
+
+			body {
+			  background: #CAE5E7;
+			  color: #333;
+			  font-family: 'Open Sans', sans-serif;
+			  font-size: 16px;
+			}
+
+			.resume {
+			  position: relative;
+			  background: white;
+			  width: 80%;
+			  max-width: 1200px;
+			  margin: 0 auto 50px;
+			  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+			@media (max-width: 58em) {
+			  .resume {
+			    width: 96%;
+			  }
+			}
+
+			header {
+			  position: relative;
+			  background: #3b8fb8;
+			  width: 100%;
+			  overflow: hidden;
+			  height: 90px;
+			  text-shadow: 1px 2px 3px #304a63;
+			}
+			header h1 {
+			  position: relative;
+			  font-family: 'Bitter', serif;
+			  font-size: 250%;
+			  background: #28627d;
+			  color: white;
+			  margin: 0;
+			  height: 90px;
+			  padding-top: 15px;
+			  padding-left: 35px;
+			  padding-right: 30px;
+			  float: left;
+			  z-index: 2;
+			}
+			@media (max-width: 75em) {
+			  header h1 {
+			    width: 100%;
+			    padding-right: 5px;
+			  }
+			}
+			@media (max-width: 36em) {
+			  header h1 span {
+			    display: none;
+			  }
+			}
+			header h1:after {
+			  position: absolute;
+			  content: '';
+			  height: 100%;
+			  border-top: 45px solid transparent;
+			  border-bottom: 45px solid transparent;
+			  border-left: 20px solid #28627d;
+			  right: -20px;
+			  top: 0;
+			}
+			header div {
+			  position: relative;
+			  color: white;
+			  float: left;
+			  padding-top: 24px;
+			  padding-left: 60px;
+			  padding-right: 48px;
+			  height: 90px;
+			}
+			@media (max-width: 75em) {
+			  header div {
+			    width: 50%;
+			  }
+			}
+			@media (max-width: 36em) {
+			  header div {
+			    width: 100%;
+			    padding-left: 30px;
+			  }
+			}
+			header div:first-of-type {
+			  background: #2e779c;
+			  z-index: 1;
+			}
+			header div:first-of-type:after {
+			  position: absolute;
+			  content: '';
+			  height: 100%;
+			  border-top: 45px solid transparent;
+			  border-bottom: 45px solid transparent;
+			  border-left: 20px solid #2e779c;
+			  right: -20px;
+			  top: 0;
+			}
+			@media (max-width: 75em) {
+			  header div:first-of-type {
+			    padding-left: 30px;
+			  }
+			}
+			header a {
+			  color: white;
+			  padding: 0 3px;
+			  border-radius: 2px;
+			  text-decoration: none;
+			}
+			header a:hover, header a:focus {
+			  color: white;
+			  background: #00baa6;
+			}
+
+			.info {
+			  width: 100%;
+			}
+
+			section {
+			  float: left;
+			  width: 70%;
+			  padding: 0 30px;
+			}
+			section article {
+			  margin-bottom: 30px;
+			}
+			section h2 {
+			  font-size: 100%;
+			  text-transform: uppercase;
+			  margin-bottom: 0;
+			}
+			section h2 span {
+			  text-transform: none;
+			}
+			section p {
+			  line-height: 1.5;
+			}
+			section .education p {
+			  margin-top: 3px;
+			}
+			@media (max-width: 58em) {
+			  section {
+			    width: 100%;
+			  }
+			}
+
+			.work .block {
+			  margin-bottom: 30px;
+			}
+
+			aside {
+			  float: left;
+			  background: whitesmoke;
+			  border-left: 1px solid #ccc;
+			  width: 30%;
+			  padding-left: 30px;
+			  padding-right: 30px;
+			}
+			aside article {
+			  margin-bottom: 50px;
+			}
+			aside h1 {
+			  font-size: 150%;
+			  margin-top: 29px;
+			}
+			aside a {
+			  color: #333;
+			  text-decoration: none;
+			  border-bottom: 1px dashed gainsboro;
+			}
+			aside a:hover, aside a:focus {
+			  background: #e8e8e8;
+			}
+			@media (max-width: 58em) {
+			  aside {
+			    width: 100%;
+			    border-left: none;
+			    border-top: 1px solid #ccc;
+			  }
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Hola Mundo</h1>
+		<div class="resume">
+			<header>
+			  <h1>Jhonatan <span>G.</span> Huamani</h1>
+			  <div class="job-titles">
+			    Web Developer
+			  </div>
+			  <div class="contact-info">
+			    <a href="mailto:jhonatanhrg@gmail.com?subject=Saw your resume online...">jhonatanhrg@gmail.com</a><br/>
+			    <a href="tel:987654321">987654321</a>
+			  </div>
+			</header>  
+			<div class="info">
+				<section role="main"> 
+					<article class="work">
+						<h1>Work Experience</h1>
+						<div class="block">
+							<h2>2004-Present: Elm Software LLC | Chester Springs, PA</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam consequuntur, doloremque accusantium numquam perspiciatis officia deleniti dolor. Modi quaerat similique vero facere atque harum, aliquam nihil distinctio exercitationem, nam itaque.</p>
+							<p><em>Roles:</em>  amet, consectetur adipisicing elit.</p>
+							<p><em>Responsibilities:</em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quis, perspiciatis temporibus velit, ipsam molestias corporis sit iste facilis nemo est eveniet alias praesentium voluptas porro cum autem! Sequi, consequatur.</p>
+							<p><em>Highlights:</em></p>
+							<ul>
+								<li>Magni quis, perspiciatis temporibus velit, ipsam molestias corporis sit iste facilis nemo est eveniet Sequi, consequatur.</li>
+								<li>Magni quis, perspiciatis temporibus velit, ipsam molestias corporis sit iste facilis nemo est eveniet Sequi, consequatur.</li>
+								<li>Magni quis, perspiciatis temporibus velit, ipsam molestias corporis sit iste facilis nemo est eveniet Sequi, consequatur.</li>
+							</ul>
+						</div>
+						<div class="block">
+							<h2>2002-2004: Centocor, Inc. | Malvern, PA</h2>
+							<p><em>Role:</em> Lead Application Developer, Consultant</p>
+							<p><em>Responsibilities:</em> Magni quis, perspiciatis temporibus velit, ipsam molestias corporis sit iste facilis nemo est eveniet Sequi, consequatur.</p>
+						</div>
+				    </article>
+				</section>
+				<aside>
+					<article>
+						<h1>Technologies</h1>
+						<p>ASP.Net / MVC</p>
+						<p>C#</p>
+						<p>CSS3</p>
+						<p>HTML5</p>
+						<p>Javascript / jQuery</p>
+						<p>MySQL</p>
+						<p>Oracle</p>
+						<p>PHP</p>
+						<p>Responsive Web Design</p>
+						<p>SASS + Compass</p>
+						<p>SQL Server</p>
+						<p>Wordpress</p>
+						<p>Ruby</p>
+						<p>Ruby on Rails</p>
+						<p>Nodejs</p>
+						<p>Angularjs</p>
+						<p>MongoDB</p>
+						<p>SQL Server</p>
+					</article>
+				    <article>
+						<h1>Hobbies</h1>
+						<p>PLay Dota</p>
+						<p>Play Soccer</p>
+						<p>Listen to music</p>
+						<p>Read Books about Tecnology</p>
+						<p>Developing Ruby sites for spend time</p>
+				    </article>
+				</aside>
+			</div><!-- CV -->
+		</div><!-- That's a wrap -->
+		<script type="text/javascript">
+			$(window).resize(function() { 
+				if ($(window).width() > 928) {
+			    	$('aside').height($('section').height())
+			    } else {
+			        $('aside').height('auto')
+			    }
+			});
+		</script>
 	</body>
 </html>
