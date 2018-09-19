@@ -5,27 +5,32 @@
 		<meta charset="utf-8">
 		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 		<style type="text/css">
-		
-		
-      body{ text-align: center; }
-#dataset{
-  width:600px;
-  height:750px;
-  margin:auto;
-  background: #eee;
-  display :none;
-  tr{
-    td{
-      width: 25px;
-      height: 25px;
-      border:1px solid #eee;
-      background: steelblue;
-      font-weight:bold;
-      text-align:right;
-    }
-  }
-}
-#mytab1{
+			body{ text-align: center; }
+			#dataset{
+				width:600px;
+				height:750px;
+				margin:auto;
+				background: #eee;
+				display :none;
+						width: 25px;
+						height: 25px;
+						border:1px solid #eee;
+						background: steelblue;
+						font-weight:bold;
+						text-align:right;
+					
+				
+			}
+			#dataset tr	td{
+						width: 25px;
+						height: 25px;
+						border:1px solid #eee;
+						background: steelblue;
+						font-weight:bold;
+						text-align:right;
+					
+				}
+			#mytab1{
   display: inline-block;
   margin: auto;
   background: #eee;
@@ -173,58 +178,41 @@ td{
 </div>
 <table id="myTable">
 </table>
-      <script src="//assets.codepen.io/assets/common/stopExecutionOnTimeout-f961f59a28ef4fd551736b43f94620b5.js"></script>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-        <script>
-      var dataset = [];
-for (var i = 0; i < 45; i++) {
-    if (window.CP.shouldStopExecution(2)) {
-        break;
-    }
-    dataset[i] = [];
-    for (var j = 0; j < 49; j++) {
-        if (window.CP.shouldStopExecution(1)) {
-            break;
-        }
-        dataset[i][j] = 0;
-    }
-    window.CP.exitedLoop(1);
-}
-window.CP.exitedLoop(2);
-$(document).ready(main);
-function main() {
-    $('.rnd').off('click');
-    $('.rnd').off('mouseover');
-    $('#sel').change(main);
-    $('.rnd').on($('#sel').val(), changeColor);
-    $('#reset').click(function () {
-        $('.rnd').css('background-color', '#eee');
-        $('#pintar').text('');
-    });
-    $('#calcular').click(function () {
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			var dataset = [];
+			for (var i = 0; i < 45; i++) {
+				dataset[i] = [];
+				for (var j = 0; j < 49; j++) {
+					dataset[i][j] = 0;
+				}
+			}
+			$(document).ready(main);
+			function main() {
+				$('.rnd').off('click');
+				$('.rnd').off('mouseover');
+				$('#sel').change(main);
+				$('.rnd').on($('#sel').val(), changeColor);
+				$('#reset').click(function () {
+					$('.rnd').css('background-color', '#eee');
+					$('#pintar').text('');
+				});
+				$('#calcular').click(function () {
         var caracter = [];
         var cont = 0;
-        for (var i = 0; i < document.getElementById('mytab1').rows.length; i++) {
-            if (window.CP.shouldStopExecution(4)) {
-                break;
-            }
-            for (var j = 0; j < document.getElementById('mytab1').rows[i].cells.length; j++) {
-                if (window.CP.shouldStopExecution(3)) {
-                    break;
-                }
-                if (document.getElementById('mytab1').rows[i].cells[j].style.backgroundColor == 'black') {
-                    caracter[cont] = 1;
-                    cont++;
-                } else {
-                    caracter[cont] = -1;
-                    cont++;
-                }
-            }
-            window.CP.exitedLoop(3);
+				for (var i = 0; i < document.getElementById('mytab1').rows.length; i++) {
+					for (var j = 0; j < document.getElementById('mytab1').rows[i].cells.length; j++) {
+						if (document.getElementById('mytab1').rows[i].cells[j].style.backgroundColor == 'black') {
+							caracter[cont] = 1;
+							cont++;
+						} else {
+							caracter[cont] = -1;
+							cont++;
+						}
+					}
+					
         }
-        window.CP.exitedLoop(4);
+        
         var letra = document.getElementById('letra').value;
         var estilo = parseInt(document.getElementById('estilo').value);
         var f = 0;
@@ -274,20 +262,12 @@ function main() {
         var textitos = '';
         var contCaracterJ = 0;
         for (var i = f; i < tamI; i++) {
-            if (window.CP.shouldStopExecution(6)) {
-                break;
-            }
             for (var j = c; j < tamJ; j++) {
-                if (window.CP.shouldStopExecution(5)) {
-                    break;
-                }
                 dataset[i][j] = caracter[contCaracterJ];
                 textitos += dataset[i][j] + ' ';
                 contCaracterJ++;
             }
-            window.CP.exitedLoop(5);
         }
-        window.CP.exitedLoop(6);
         document.getElementById('myTable').innerHTML = '';
         var table = document.getElementById('myTable');
         for (var i = 0; i < 45; i++) {
@@ -308,20 +288,12 @@ function llenarTextArea(texto) {
 function saveTextAsFile() {
     var texto = '';
     for (var i = 0; i < 45; i++) {
-        if (window.CP.shouldStopExecution(8)) {
-            break;
-        }
         for (var j = 0; j < 49; j++) {
-            if (window.CP.shouldStopExecution(7)) {
-                break;
-            }
             texto += dataset[i][j] + ' ';
         }
         texto += '\n';
         llenarTextArea(texto);
-        window.CP.exitedLoop(7);
     }
-    window.CP.exitedLoop(8);
     var textToWrite = document.getElementById('inputTextToSave').value;
     var textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' });
     var fileNameToSaveAs = document.getElementById('inputFileNameToSaveAs').value;
@@ -573,13 +545,7 @@ function perceptron() {
     var n = 63;
     var m = 7;
     while (cond == true) {
-        if (window.CP.shouldStopExecution(14)) {
-            break;
-        }
         for (var i = 0; i < n; i++) {
-            if (window.CP.shouldStopExecution(9)) {
-                break;
-            }
             x[i] = inputs[i];
             suma += x[i] * w[i];
             if (umbral >= x[i] * w[i]) {
@@ -587,9 +553,6 @@ function perceptron() {
             }
         }
         for (var j = 0; j < m; j++) {
-            if (window.CP.shouldStopExecution(10)) {
-                break;
-            }
             y_in[j] = bias[j] + suma;
             var tot = y_in[j];
             if (tot > umbral) {
@@ -602,20 +565,10 @@ function perceptron() {
                 }
             }
         }
-        window.CP.exitedLoop(10);
         console.log(' +++++++++ ');
         for (var j = 0; j < m; j++) {
-            if (window.CP.shouldStopExecution(13)) {
-                break;
-            }
             for (var k = 0; k < m; k++) {
-                if (window.CP.shouldStopExecution(12)) {
-                    break;
-                }
                 for (var i = 0; i < n; i++) {
-                    if (window.CP.shouldStopExecution(11)) {
-                        break;
-                    }
                     if (t[j] != y[j]) {
                         bias[j] = bias[j] + t[j][k];
                         w[i] = w[i] + t[j][k] * x[i];
@@ -626,30 +579,17 @@ function perceptron() {
                         cond = true;
                     }
                 }
-                window.CP.exitedLoop(11);
             }
             console.log('-------- ');
-            window.CP.exitedLoop(12);
         }
         window.CP.exitedLoop(13);
         console.log('-------- ');
-        window.CP.exitedLoop(9);
     }
-    window.CP.exitedLoop(14);
-    console.log('estoy afuera');
+	console.log('estoy afuera');
 }
 perceptron();
-      //@ sourceURL=pen.js
-    </script>
-
-    
-    <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
-
-    
+			//@ sourceURL=pen.js
+    </script>   
   
 	</body>
 </html>
